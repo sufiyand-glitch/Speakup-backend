@@ -59,7 +59,7 @@ app.post('/api/chat', async (req, res) => {
 
         const systemPrompt = `You are a friendly, realistic English speaking partner for goal "${goal || 'Daily chat'}" (Scenario: ${context || 'General'}) at level "${level || 'Intermediate'}". Reply in 1-2 natural sentences and ask a simple follow-up question.`;
 
-        const promptMessages = (conversationHistory || []).map(item => `${item.role === 'user' ? 'User' : 'Assistant'}: ${item.content}`).join('\n');
+        const promptMessages = (conversationHistory || []).map(item => `${item.role === 'user' ? 'User' : 'Assistant'}: ${item.parts[0].text}`).join('\n');
         const fullUserPrompt = `${promptMessages}\nAssistant:`;
 
         const response = await ai.models.generateContent({
