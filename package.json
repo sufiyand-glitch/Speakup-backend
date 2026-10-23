@@ -4,7 +4,8 @@
   "description": "SpeakUp AI English Coach Backend",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build":"echo 'No build step required'"\'.
   },
   "dependencies": {
     "@google/genai": "^2.30.0",
